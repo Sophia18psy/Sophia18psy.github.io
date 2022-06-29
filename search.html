@@ -18,12 +18,12 @@
                     library(googlesheets)
                     data<-read_sheet("https://docs.google.com/spreadsheets/d/15GwcCSry1TDfE-Ez8R2AV-NyODxwlVXpLNXsSV4IlfA/edit?usp=sharing")
                     data<-as.data.frame(data)
-                    colnames(data) <- c("DateTime", "sum", "resault1", "resault2", "ID")
+                    colnames(data) <- c("DateTime", "sum", "resault1", "resault2", "Token")
                     data <- data[which(!is.na(data$DateTime)),]
                     score <- function(token) {
-                        i <- which(data$ID==token)
-                        data[i,]
-                    }
+                             i <- which(data$Token == token)
+            data[i,]
+            }
                 </code>
         <code data-type="sample-code">
                     # Put ID in "". Ex: ID("123")
