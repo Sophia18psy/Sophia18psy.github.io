@@ -15,8 +15,8 @@
 
     <div data-datacamp-exercise data-lang="r">
         <code data-type="pre-exercise-code">
-                    library(googlesheets)
-                    data <- gs_read(gs_url("https://docs.google.com/spreadsheets/d/15GwcCSry1TDfE-Ez8R2AV-NyODxwlVXpLNXsSV4IlfA/edit?usp=sharing"))
+                    library(googlesheets4)
+            data <- read_sheet("https://docs.google.com/spreadsheets/d/15GwcCSry1TDfE-Ez8R2AV-NyODxwlVXpLNXsSV4IlfA/edit?usp=sharing")
         
                     data <- as.data.frame(data)
                     colnames(data) <- c("DateTime", "Token", "Score")
