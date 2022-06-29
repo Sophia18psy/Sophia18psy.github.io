@@ -14,24 +14,24 @@
 <body>
 
     <div data-datacamp-exercise data-lang="r">
-       <code data-type="pre-exercise-code">
-      library(googlesheets4)
-    ??googlesheets4
-    data <- read_sheet("https://docs.google.com/spreadsheets/d/15GwcCSry1TDfE-Ez8R2AV-NyODxwlVXpLNXsSV4IlfA/edit?usp=sharing")
-    
+       <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+<div data-datacamp-exercise data-lang="r">
+  <code data-type="pre-exercise-code">
+    library(googlesheets)
+    data <- gs_read(gs_url("https://docs.google.com/spreadsheets/d/15GwcCSry1TDfE-Ez8R2AV-NyODxwlVXpLNXsSV4IlfA/edit?usp=sharing"))
+              
     data <- as.data.frame(data)
     colnames(data) <- c("DateTime", "Score", "Password")
     data <- data[which(!is.na(data$DateTime)),]
-    
     score <- function(Password) {
       i <- which(data$Password == Password)
       data[i,]
     }
-                </code>
-        <code data-type="sample-code">
-                    # Put Password in "". Ex: score("abcde123")
-                    score("Enter_your_Password")
-                </code>
+  </code>
+  <code data-type="sample-code">
+    # Put Password in "". Ex: score("abcde123")
+    score("Enter_your_Password")
+  </code>
     </div>
 
     <button type="button" class="btn btn-outline-secondary btn-xs pull-right" onclick="myFunction()">Reload</button>
